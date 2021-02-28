@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @doinit.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @doinit.user_id %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @doinit.importance %>
+</p>
+
+<%= link_to 'Edit', edit_doinit_path(@doinit) %> |
+<%= link_to 'Back', doinits_path %>

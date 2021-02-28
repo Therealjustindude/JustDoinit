@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Doinits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th>Importance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doinits.each do |doinit| %>
+      <tr>
+        <td><%= doinit.title %></td>
+        <td><%= doinit.user_id %></td>
+        <td><%= doinit.importance %></td>
+        <td><%= link_to 'Show', doinit %></td>
+        <td><%= link_to 'Edit', edit_doinit_path(doinit) %></td>
+        <td><%= link_to 'Destroy', doinit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doinit', new_doinit_path %>
