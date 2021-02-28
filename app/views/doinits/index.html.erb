@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>User</th>
       <th>Importance</th>
       <th colspan="3"></th>
     </tr>
@@ -16,7 +15,6 @@
     <% @doinits.each do |doinit| %>
       <tr>
         <td><%= doinit.title %></td>
-        <td><%= doinit.user_id %></td>
         <td><%= doinit.importance %></td>
         <td><%= link_to 'Show', doinit %></td>
         <td><%= link_to 'Edit', edit_doinit_path(doinit) %></td>
