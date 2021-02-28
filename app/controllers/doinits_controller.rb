@@ -1,6 +1,6 @@
 class DoinitsController < ApplicationController
   before_action :set_doinit, only: %i[ show edit update destroy ]
-
+  include DoinitsHelper
   # GET /doinits or /doinits.json
   def index
     @doinits = Doinit.all
@@ -22,7 +22,7 @@ class DoinitsController < ApplicationController
   # POST /doinits or /doinits.json
   def create
     @doinit = Doinit.new(doinit_params)
-
+    @doinit = assign_post_creator(@doinit, current_user)
     respond_to do |format|
       if @doinit.save
         format.html { redirect_to @doinit, notice: "Doinit was successfully created." }
